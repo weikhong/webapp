@@ -7,10 +7,19 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class IndexController {
-	@RequestMapping(value = { "/mvc/", "/mvc/index**" }, method = RequestMethod.GET)
+	@RequestMapping(value = { "/", "/index**", "/login" }, method = RequestMethod.GET)
 	public ModelAndView indexPage() {
 
 		ModelAndView model = new ModelAndView("index");		
 		return model;
+	}
+
+	@RequestMapping(value = { "/dashboard" }, method = RequestMethod.GET)
+	public ModelAndView adminPage() {
+
+		ModelAndView model = new ModelAndView("dashboard");
+
+		return model;
+
 	}
 }
