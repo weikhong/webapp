@@ -2,7 +2,7 @@
 <c:set scope="request" var="ctxPath" value="${pageContext.request.contextPath}" />
 <c:set scope="request" var="ctxName" value="${pageContext.servletContext.servletContextName}" />
 <c:set scope="request" var="pageName"> Dashboard Page</c:set>
-<%@ page language="java" contentType="text/html; charset=UTF-8"pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>

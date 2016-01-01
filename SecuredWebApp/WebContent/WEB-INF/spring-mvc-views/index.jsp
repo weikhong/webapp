@@ -2,7 +2,7 @@
 <c:set scope="request" var="ctxPath" value="${pageContext.request.contextPath}" />
 <c:set scope="request" var="ctxName" value="${pageContext.servletContext.servletContextName}" />
 <c:set scope="request" var="pageName">Spring MVC Welcome Page</c:set>
-<%@ page language="java" contentType="text/html; charset=UTF-8"pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -17,6 +17,7 @@
 	<!-- Ionicons -->
 	<link href="//code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css" rel="stylesheet" type="text/css" />
 	<style type="text/css">
+		/* http://bootsnipp.com/snippets/featured/mix-amp-match-login */
 		/* Credit to bootsnipp.com for the css for the color graph */
 		.colorgraph {
 			height: 5px; border-top: 0; background: #c4e17f; border-radius: 5px;
