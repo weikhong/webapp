@@ -8,13 +8,20 @@
 <!-- ======================================================================================================================== -->
 
 	<properties>
+		<dbcp.version>2.3.12</dbcp.version>
+		<derby.version>10.10.2.0</derby.version>
+		<h2db.version>1.4.190</h2db.version>
+		<hsqldb.version>2.3.3</hsqldb.version>
 		<jdk.version>1.6</jdk.version>
 		<jsp.version>2.2</jsp.version>
 		<jstl.version>1.2</jstl.version>
 		<servlet.version>2.5</servlet.version>
-		<spring.version>4.0.3.RELEASE</spring.version>
-		<spring.security.version>3.2.5.RELEASE</spring.security.version>
+		<!-- <spring.version>4.0.3.RELEASE</spring.version>
+		<spring-security.version>3.2.5.RELEASE</spring-security.version> -->
+		<spring.version>4.1.9.RELEASE</spring.version>
+		<spring-security.version>4.0.3.RELEASE</spring-security.version>
 	</properties>
+
 <!-- ======================================================================================================================== -->
 
   <dependencies>
@@ -48,21 +55,48 @@
 			<artifactId>spring-webmvc</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
+		<!-- ########## Spring JDBC ########## -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
 		<!-- ########## Spring SECURITY ########## -->
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-web</artifactId>
-			<version>${spring.security.version}</version>
+			<version>${spring-security.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-config</artifactId>
-			<version>${spring.security.version}</version>
+			<version>${spring-security.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-taglibs</artifactId>
-			<version>${spring.security.version}</version>
+			<version>${spring-security.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.zaxxer</groupId>
+			<artifactId>HikariCP-java6</artifactId>
+			<version>${dbcp.version}</version>
+		</dependency>
+		<!-- ########## EMBEDDED Database: HyperSQL DB, H2 DB, Derby DB ########## -->
+		<dependency>
+			<groupId>org.hsqldb</groupId>
+			<artifactId>hsqldb</artifactId>
+			<version>${hsqldb.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<version>${h2db.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.derby</groupId>
+			<artifactId>derby</artifactId>
+			<version>${derby.version}</version>
 		</dependency>
   	<!-- ########## JSTL ########## -->
 		<dependency>

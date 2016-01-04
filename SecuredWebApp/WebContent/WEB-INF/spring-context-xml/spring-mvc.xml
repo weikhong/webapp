@@ -11,6 +11,14 @@
 		http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
 	<context:component-scan base-package="com.wkt.spring.security.controllers" />
+	<!-- For MVC resources to work, MVC annotation must be ENABLED -->
+	<mvc:resources mapping="/mvc-resources/**" location="/WEB-INF/spring-mvc-resources/" />
+
+	<mvc:annotation-driven>
+		<!-- <mvc:argument-resolvers>
+			<bean class="org.springframework.security.web.bind.support.AuthenticationPrincipalArgumentResolver"/>
+		</mvc:argument-resolvers> -->
+	</mvc:annotation-driven>
 
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -25,7 +33,7 @@
 
 	<bean id="messageSource"
 		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
-		<property name="basename" value="classpath:message" />
+		<property name="basename" value="classpath:LocalizeMessage" />
 		<property name="defaultEncoding" value="UTF-8" />
 	</bean>
 

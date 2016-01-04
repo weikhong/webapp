@@ -1,0 +1,44 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<context:component-scan base-package="com.wkt.dao" />
+
+	<!-- <bean id="userDao" class="com.wkt.dao.UserDaoImpl" >
+		<property name="namedParameterJdbcTemplate" ref="jdbcTemplate" />
+	</bean> -->
+
+	<bean
+			id="jdbcTemplate"
+			class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">
+		<constructor-arg ref="dbcpDataSource" />
+	</bean>
+
+	<bean
+			id="dbcpDataSource"
+			class="com.zaxxer.hikari.HikariDataSource"
+			destroy-method="close">
+		<constructor-arg>
+			<bean class="com.zaxxer.hikari.HikariConfig">
+				<property name="connectionTestQuery" value="SELECT * FROM users" />
+				<property name="dataSource">
+					<bean class="org.hsqldb.jdbc.JDBCDataSource">
+						<property name="url" value="jdbc:hsqldb:mem:dataSource" />
+						<property name="user" value="sa"/>
+						<property name="password" value=""/>
+					</bean>
+				</property>
+			</bean>
+		</constructor-arg>
+		<!-- <property name="driverClassName" value="org.hsqldb.jdbcDriver" />
+		<property name="url" value="jdbc:hsqldb:mem:dataSource" />
+		<property name="username" value="sa" />
+		<property name="password" value="" /> -->
+	</bean>
+
+</beans>
